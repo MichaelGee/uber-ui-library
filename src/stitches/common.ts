@@ -2,8 +2,7 @@ import type * as Stitches from '@stitches/react';
 
 export const defaultTokens = {
   fonts: {
-    dm: "'DM Sans', sans-serif",
-    general: "'General Sans', sans-serif",
+    uber: "'Uber Move', sans-serif",
   },
   fontWeights: {
     hairline: 100,
@@ -20,7 +19,7 @@ export const defaultTokens = {
     xs: '5px',
     sm: '9px',
     md: '12px',
-    base: '14px',
+    base: '8px',
     lg: '14px',
     xl: '18px',
     squared: '33%',
@@ -86,29 +85,18 @@ export const defaultTokens = {
   },
 };
 export const defaultColors = {
-  primary: '#7E5FF2',
+  primary: '#000000',
   white: '#FFFFFF',
   black: '#000000',
-  purple100: '#E4DDFF',
-  purple200: '#B209CD',
-  purple300: '#3C268C',
-  purple400: '#7464B3',
-  purple500: '#F6F3FF',
-  purple600: '#FFF3F3',
-  purple700: '#FF9B9A',
-  purple800: '#4824C1',
-  purple900: '#5D4BA0',
-  purple110: '#5D3AE1',
-  purple120: '#F1EFFF',
-  purple130: '#5842AC',
-  purple140: '#F2EEFF',
-  purple150: '#815AF1',
-  rose100: '#FF33C6',
-  rose200: '#E409A7',
-  red100: '#F99DA8',
-  red200: '#EB4559',
-  grey100: '#B1A8D1',
-  grey200: '#E5E5E5',
+  gray100: '#F3F3F3',
+  gray200: '#E8E8E8',
+  gray300: '#4B4B4B',
+  gray400: '#5E5E5E',
+  gray500: '#A6A6A6',
+  red100: '#DE1135',
+  green100: '#0E8345',
+  blue100: '#266EF1',
+  blue200: '#EFF4FE',
 };
 
 export const defaultMedia = {
