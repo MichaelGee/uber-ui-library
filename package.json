@@ -13,11 +13,14 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@react-aria/interactions": "^3.16.0",
     "@stitches/react": "^1.2.8",
+    "enzyme": "^3.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@react-aria/button": "^3.8.0",
     "@storybook/addon-a11y": "^7.0.27",
     "@storybook/addon-docs": "^7.0.27",
     "@storybook/addon-essentials": "^7.0.27",
@@ -28,6 +31,11 @@
     "@storybook/react": "^7.0.27",
     "@storybook/react-vite": "^7.0.27",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@testing-library/dom": "^9.3.1",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.5.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.61.0",

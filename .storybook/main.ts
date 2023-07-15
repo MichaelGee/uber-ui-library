@@ -18,7 +18,14 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: true,
+    defaultName: 'Documentation',
+  },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      include: ['../../path/to/your/lib/**/**.tsx'], // <- This is the important line.
+    },
   },
 };
 export default config;

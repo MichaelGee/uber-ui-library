@@ -10,7 +10,7 @@ const Box = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   flexWrap: 'wrap',
-  fontFamily: '"DM Sans", sans-serif !important',
+  fontFamily: '$fonts$uber',
 });
 
 export const decorators = [
