@@ -10,12 +10,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prettier": "prettier --write .",
-    "test": "jest --config jest.config.js --no-cache",
-    "test-update": "jest --config jest.config.js --no-cache --update-snapshot",
-    "coverage": "yarn test --coverage",
-    "coverage-update": "yarn test-update --coverage",
-    "coverage:codecov": "yarn test --coverage && codecov"
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@react-aria/interactions": "^3.16.0",
