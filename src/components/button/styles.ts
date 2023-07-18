@@ -167,31 +167,31 @@ export const StyledButton = styled('button', {
       },
     },
     {
-      size: 'sx',
+      size: 'xs',
       circle: true,
       css: {
-        padding: '0.375rem 0.6rem',
+        padding: '0.375rem 0.6rem !important',
       },
     },
     {
       size: 'sm',
       circle: true,
       css: {
-        padding: '0.63rem 0.75rem',
+        padding: '0.63rem 0.75rem !important',
       },
     },
     {
       size: 'md',
       circle: true,
       css: {
-        padding: '0.880rem 1rem',
+        padding: '0.880rem 0.98rem !important',
       },
     },
     {
       size: 'lg',
       circle: true,
       css: {
-        padding: '1.25rem 1.28rem',
+        padding: '1.25rem 1.26rem !important',
       },
     },
   ],
