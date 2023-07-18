@@ -2,7 +2,7 @@ import type * as Stitches from '@stitches/react';
 
 export const defaultTokens = {
   fonts: {
-    uber: "'Uber Move', sans-serif",
+    uber: "'Uber Move Text', sans-serif",
   },
   fontWeights: {
     hairline: 100,
@@ -69,7 +69,7 @@ export const defaultTokens = {
     96: '24rem',
   },
   transitions: {
-    default: 'all 250ms ease',
+    default: 'all 250ms ease-in-out',
     button:
       'background 0.25s  0s, color 0.25s ease 0s, border-color 0.65s ease 0s, box-shadow 0.25s ease 0s, transform 0.25s ease 0s, opacity 0.25s ease 0s',
   },

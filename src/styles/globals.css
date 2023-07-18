@@ -1,7 +1,33 @@
-@import url('https://fonts.cdnfonts.com/css/uber-move-2');
+/* @import url('https://fonts.cdnfonts.com/css/uber-move-2'); */
+
+@font-face {
+  font-family: 'Uber Move Text', sans-serif;
+  src: url(/fonts/UberMoveText-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Uber Move Text', sans-serif;
+  src: url(/fonts/UberMoveText-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Uber Move Text', sans-serif;
+  src: url(/fonts/UberMoveText-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Uber Move Text', sans-serif;
+  src: url(/fonts/public/UberMoveText-Bold.ttf) format('truetype');
+  font-weight: 700;
+}
+
+/* ************ */
 
 * {
-  font-family: 'Uber Move', sans-serif !important;
+  font-family: 'Uber Move Text', sans-serif !important;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -9,7 +35,7 @@
 
 html,
 body {
-  font-family: 'Uber Move', sans-serif !important;
+  font-family: 'Uber Move Text', sans-serif !important;
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 16px;
@@ -97,3 +123,7 @@ q:before {
 
 /* Utility classes and resets
  * *********************************** */
+/* Storybook */
+.sb-show-main.sb-main-padded {
+  height: 100vh;
+}

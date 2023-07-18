@@ -14,7 +14,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "types": ["unplugin-fonts/client"]
   },
   "include": ["src"],
   "exclude": ["node_modules"],
