@@ -17,7 +17,8 @@
     "@stitches/react": "^1.2.8",
     "enzyme": "^3.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "unplugin-fonts": "^1.0.3"
   },
   "devDependencies": {
     "@react-aria/button": "^3.8.0",
