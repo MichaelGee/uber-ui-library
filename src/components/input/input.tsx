@@ -1,41 +1,31 @@
-import React, {forwardRef, useEffect, useState, useRef, useImperativeHandle, useMemo} from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useState,
+  useRef,
+  useImperativeHandle,
+  useMemo,
+  PropsWithoutRef,
+  RefAttributes,
+} from 'react';
 import {
   StyledInputMainContainer,
-  StyledTextField,
+  StyledInput,
   StyledInputLabel,
   StyledHelperTextContainer,
   StyledHelperText,
-  TextFieldVariants,
+  InputVariants,
   StyledClearButton,
   ErrorStateContainer,
 } from './styles';
 import {__DEV__} from 'utils/assertion';
-import {FormElement} from './input-props';
+import {Props, FormElement, defaultProps} from './input-props';
 import {ErrorCircleIcon} from 'icons/error-circle-icon';
 import {SuccessCircleIcon} from 'icons/success-circle-icon';
 import {CloseCircleIcon} from 'icons/close-circle.icon';
+import InputPassword from './input-password';
 
-interface Props {
-  placeholder?: string;
-  error?: boolean;
-  isError?: 'error' | 'success';
-  success?: boolean;
-  onFocus?: (e: React.FocusEvent<FormElement>) => void;
-  onChange?: (e: React.ChangeEvent<FormElement>) => void;
-  onClearClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-  value?: string;
-  initialValue?: string;
-  disabled?: boolean;
-  label: string;
-  type?: string;
-  helperText?: string;
-  clearable?: boolean;
-  size?: 'sm' | 'md' | 'lg';
-  as?: React.ElementType;
-  readOnly?: boolean;
-}
-
-type TextFieldProps = Props & TextFieldVariants;
+type InputProps = Props & InputVariants;
 
 const simulateChangeEvent = (
   el: FormElement,
@@ -48,7 +38,7 @@ const simulateChangeEvent = (
   };
 };
 
-const Textfield = forwardRef<HTMLInputElement, TextFieldProps>(
+const Input = forwardRef<HTMLInputElement, InputProps>(
   (
     {
       as: Component = 'input',
@@ -67,6 +57,8 @@ const Textfield = forwardRef<HTMLInputElement, TextFieldProps>(
       clearable,
       onClearClick,
       readOnly,
+      css,
+      fullWidth,
       ...props
     },
     ref
@@ -127,9 +119,9 @@ const Textfield = forwardRef<HTMLInputElement, TextFieldProps>(
     }, [isControlledComponent, value]);
 
     return (
-      <StyledInputMainContainer>
+      <StyledInputMainContainer fullWidth={fullWidth}>
         <StyledInputLabel size={size}>{label}</StyledInputLabel>
-        <StyledTextField
+        <StyledInput
           type={type}
           as={Component}
           ref={inputRef}
@@ -141,6 +133,8 @@ const Textfield = forwardRef<HTMLInputElement, TextFieldProps>(
           isReadOnly={readOnly}
           readOnly={readOnly}
           size={size}
+          fullWidth={fullWidth}
+          css={{...(css as any)}}
           {...inputProps}
         />
         {clearable && (
@@ -177,10 +171,20 @@ const Textfield = forwardRef<HTMLInputElement, TextFieldProps>(
   }
 );
 
+type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
+  PropsWithoutRef<P> & RefAttributes<T>
+> & {
+  Password: typeof InputPassword;
+};
+
+type ComponentProps = Partial<typeof Input.defaultProps> &
+  Omit<Props, keyof typeof Input.defaultProps> &
+  InputVariants & {as?: React.ElementType};
+
 if (__DEV__) {
-  Textfield.displayName = 'UberUI.Textfield';
+  Input.displayName = 'UberUI.Input';
 }
 
-Textfield.toString = () => '.uberui-textfield';
+Input.toString = () => '.uberui-Input';
 
-export default Textfield;
+export default Input as InputComponent<FormElement, ComponentProps>;

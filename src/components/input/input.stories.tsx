@@ -1,9 +1,10 @@
 import {StoryObj, Meta} from '@storybook/react';
-import {Textfield} from './index';
+import Input from './input';
+import InputPassword from './input-password';
 
 const meta = {
-  title: 'Components/Textfield',
-  component: Textfield,
+  title: 'Components/Input',
+  component: Input,
   tags: ['autodocs'],
   argTypes: {
     size: {
@@ -15,10 +16,10 @@ const meta = {
       options: ['error', 'success'],
     },
   },
-} satisfies Meta<typeof Textfield>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
-type Story = StoryObj<typeof Textfield>;
+type Story = StoryObj<typeof Input>;
 
 export const Default: Story = {
   args: {
@@ -34,6 +35,7 @@ export const Default: Story = {
     size: 'sm',
     clearable: false,
     readOnly: false,
+    fullWidth: false,
   },
 };
 
@@ -93,3 +95,5 @@ export const ReadOnly: Story = {
     size: 'sm',
   },
 };
+
+export const Password = () => <InputPassword placeholder="Password" size="sm" />;
