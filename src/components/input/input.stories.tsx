@@ -15,6 +15,10 @@ const meta = {
       control: 'select',
       options: ['error', 'success'],
     },
+    type: {
+      control: 'select',
+      options: ['text', 'password', 'number', 'email', 'tel', 'url'],
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -36,6 +40,7 @@ export const Default: Story = {
     clearable: false,
     readOnly: false,
     fullWidth: false,
+    type: 'text',
   },
 };
 
