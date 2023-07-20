@@ -1,32 +1,30 @@
 import {styled, VariantProps} from 'stitches/stitches.config';
 
 export const StyledInputMainContainer = styled('div', {
-  width: 'auto',
   position: 'relative',
   flexDirection: 'column',
   justifyContent: 'center',
   boxSizing: 'border-box',
   WebkitBoxAlign: 'center',
+  width: 'fit-content',
+  margin: '0 auto',
   variants: {
-    small: {
+    fullWidth: {
       true: {
-        width: 'unset',
+        width: '100%',
       },
     },
   },
 });
 
-export const StyledTextField = styled('input', {
+export const StyledInput = styled('input', {
   boxSizing: 'border-box',
   background: '$gray200',
-
   borderRadius: '$base',
   border: '3px solid transparent',
-
   lineHeight: '1.25rem',
   fontWeight: '$light',
   color: '$primary',
-  width: 'auto',
   minWidth: '21.4375rem',
   letterSpacing: '0.6px',
   '&::placeholder': {
@@ -36,8 +34,8 @@ export const StyledTextField = styled('input', {
   '&:focus': {
     outline: 'none',
     border: '3px solid $blue100',
-    transition: '$default',
     background: '$white',
+    transition: '$button',
   },
   '&:disabled': {
     bg: '$gray100',
@@ -45,12 +43,12 @@ export const StyledTextField = styled('input', {
     cursor: 'not-allowed',
     pointerEvents: 'none',
   },
-  '&:active': {
-    outline: 'none',
-    border: '3px solid $primary100',
-    transition: '$default',
-    background: '$white',
-  },
+  /* Donno how to use this part */
+  // '&:active': {
+  //   outline: 'none',
+  //   border: '3px solid $primary100',
+  //   background: '$white',
+  // },
   variants: {
     disabled: {
       true: {
@@ -58,6 +56,12 @@ export const StyledTextField = styled('input', {
         userSelect: 'none',
         cursor: 'not-allowed',
         pointerEvents: 'none',
+      },
+    },
+    fullWidth: {
+      true: {
+        width: '100%',
+        // minWidth: '21.4375rem',
       },
     },
     error: {
@@ -241,4 +245,4 @@ export const ErrorStateContainer = styled('div', {
   },
 });
 
-export type TextFieldVariants = VariantProps<typeof StyledTextField>;
+export type InputVariants = VariantProps<typeof StyledInput>;
