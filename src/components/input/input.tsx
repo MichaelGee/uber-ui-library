@@ -126,6 +126,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           as={Component}
           ref={inputRef}
           error={error}
+          value={value}
           success={success}
           placeholder={placeholder}
           onChange={changeHandler}

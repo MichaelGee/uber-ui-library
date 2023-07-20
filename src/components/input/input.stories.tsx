@@ -101,4 +101,4 @@ export const ReadOnly: Story = {
   },
 };
 
-export const Password = () => <InputPassword placeholder="Password" size="sm" />;
+export const Password = () => <InputPassword placeholder="Password" size="sm" isError="error" />;
