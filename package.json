@@ -13,6 +13,7 @@
     "prettier": "prettier --write ."
   },
   "dependencies": {
+    "@radix-ui/react-switch": "1.0.3",
     "@react-aria/interactions": "^3.16.0",
     "@stitches/react": "^1.2.8",
     "enzyme": "^3.11.0",
