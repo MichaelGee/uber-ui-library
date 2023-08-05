@@ -4,7 +4,7 @@
 const generateUniqueClassName = (prefix: string) => {
   const count = classNameRegistry.get(prefix)?.length ?? 0;
   const postfix = count.toString().padStart(4, '0');
-  return `lighthouse${prefix ? `-${prefix}` : ''}-${postfix}`;
+  return `uber-ui${prefix ? `-${prefix}` : ''}-${postfix}`;
 };
 
 const classNameRegistry: Map<string, Array<string>> = new Map();

@@ -80,6 +80,7 @@ export const StyledButton = styled('button', {
         br: '$radii$base',
         '&:hover': {
           background: '$gray600',
+          transition: 'background 200ms linear',
         },
       },
       secondary: {
@@ -88,6 +89,7 @@ export const StyledButton = styled('button', {
         br: '$radii$base',
         '&:hover': {
           background: '$gray700',
+          transition: 'background 200ms linear',
         },
       },
       tertiary: {
@@ -96,6 +98,7 @@ export const StyledButton = styled('button', {
         br: '$radii$base',
         '&:hover': {
           background: '$gray200',
+          transition: 'background 200ms linear',
         },
       },
     },
