@@ -22,21 +22,6 @@ const slideLeftAndFade = keyframes({
   '100%': {opacity: 1, transform: 'translateX(0)'},
 });
 
-const getTooltipAnimation = position => {
-  switch (position) {
-    case 'top':
-      return slideDownAndFade;
-    case 'right':
-      return slideLeftAndFade;
-    case 'bottom':
-      return slideUpAndFade;
-    case 'left':
-      return slideRightAndFade;
-    default:
-      return slideDownAndFade;
-  }
-};
-
 export const TooltipContent = styled(Tooltip.Content, {
   borderRadius: '$radii$base',
   border: 'none',
@@ -53,7 +38,7 @@ export const TooltipContent = styled(Tooltip.Content, {
   willChange: 'transform, opacity',
   '&[data-state="delayed-open"]': {
     '&[data-side]': {
-      animationName: data => getTooltipAnimation(data.side || 'top'),
+      animationName: 'none',
     },
   },
 });
