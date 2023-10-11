@@ -10,7 +10,7 @@ const meta: Meta = {
         options: ['top', 'left', 'right', 'bottom']
     },
     variant: {
-      options: ['simple', 'icon']
+      options: ['simple', 'icon'],
     },
   },
 };
