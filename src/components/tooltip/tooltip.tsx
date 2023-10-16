@@ -8,23 +8,21 @@ interface Props {
   side?: 'top' | 'left' | 'right' | 'bottom';
   variant?: 'simple' | 'icon';
   children: React.ReactNode;
-  onCancel?: () => void;
+  trigger:  React.ReactNode;
 }
 
 const defaultProps = {
   variant: 'simple',
 };
 
-const ToolTip = forwardRef<HTMLDivElement, Props>(({ side, variant, onCancel, children }, ref) => {
+const ToolTip = forwardRef<HTMLDivElement, Props>(({ side, variant, children, trigger }, ref) => {
   const isIconVariant = variant === 'icon';
 
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger asChild>
-          <IconButton>
-            <PlusIcon />
-          </IconButton>
+          {trigger}
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <TooltipContent side={side}>

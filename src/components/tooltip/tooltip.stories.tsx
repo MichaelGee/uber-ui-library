@@ -19,9 +19,12 @@ export default meta;
 
 type Story = StoryObj<typeof Tooltip>;
 
-export const Default: Story = (args) => <Tooltip {...args} />;
+export const Default: Story = (args) => (
+  <Tooltip {...args} trigger={<button>Hover me</button>}>
+    label
+  </Tooltip>
+);
 Default.args = {
   side: 'right',
   variant: 'icon',
-  children: 'label',
 };
