@@ -53,17 +53,3 @@ export const Icon = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
 });
-
-export const IconButton = styled('button', {
-  all: 'unset',
-  fontFamily: 'inherit',
-  height: 35,
-  width: 35,
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: '$primary',
-  backgroundColor: 'white',
-  boxShadow: `0 2px 10px '$primary'`,
-  '&:focus': {boxShadow: `0 0 0 2px black`},
-});
