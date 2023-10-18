@@ -35,3 +35,12 @@ export const AvatarFallback = styled(AvatarPrimitive.Fallback, {
 });
 
 export const Flex = styled('div', {display: 'flex'});
+
+export const User = styled('div', {
+  dflex: 'center',
+  height: '3rem',
+  fs: '1.124rem',
+  fontWeight: 500,
+  lineHeight: '1.5rem',
+  color: '$primary',
+});
