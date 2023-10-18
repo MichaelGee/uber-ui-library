@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import withDefaults from 'utils/with-defaults';
-import { TooltipContent, TooltipArrow, Icon, IconButton } from './styles';
-import { PlusIcon, Cross2Icon } from '@radix-ui/react-icons';
+import { TooltipContent, TooltipArrow, Icon } from './styles';
+import { Cross2Icon } from '@radix-ui/react-icons';
 
 interface Props {
   side?: 'top' | 'left' | 'right' | 'bottom';
