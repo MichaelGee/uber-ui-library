@@ -18,6 +18,11 @@ const meta = {
     user: {
       control: 'text',
     },
+    size: {
+      control: 'select',
+      options: ['labelXSmall', 'labelMedium', 'headingXSmall', 'headingMedium'],
+      defaultValue: 'labelMedium',
+    },
   },
 } as Meta<typeof Avatar>;
 
@@ -30,5 +35,6 @@ export const Default: Story = {
     alt: 'Pedro Duarte',
     fallback: 'PD',
     user: 'Pedro Duarte',
+    size: 'labelMedium',
   },
 };

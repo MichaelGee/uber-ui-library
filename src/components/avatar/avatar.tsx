@@ -7,13 +7,18 @@ interface Props {
    alt?: string;
    fallback?: string;
    user?: string;
+   size?: 'labelXSmall' | 'labelMedium' | 'headingXSmall' | 'headingMedium';
   }
 
-const Avatar = forwardRef<HTMLDivElement, Props>(({src, alt, fallback, user}, ref) =>{
+  const defaultProps = {
+    size: 'labelMedium',
+  };
+
+const Avatar = forwardRef<HTMLDivElement, Props>(({src, alt, fallback, user, size}, ref) =>{
  return (
     <Flex css={{ gap: 20 }}>
       
-      <AvatarRoot>
+      <AvatarRoot size={size}>
         <AvatarImage
           src={src}
           alt={alt}
