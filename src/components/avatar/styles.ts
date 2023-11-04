@@ -1,8 +1,6 @@
 import {styled} from 'stitches/stitches.config';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 
-//const calculateHeight = size => `calc(${sizes[size].fontSize} + ${sizes[size].lineHeight})`;
-
 export const AvatarRoot = styled(AvatarPrimitive.Root, {
   display: 'inline-flex',
   alignItems: 'center',
@@ -52,7 +50,6 @@ export const AvatarImage = styled(AvatarPrimitive.Image, {
 export const AvatarFallback = styled(AvatarPrimitive.Fallback, {
   width: '100%',
   height: '100%',
-  // height: ({ size = 'headingMedium' }) => calculateHeight(size),
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

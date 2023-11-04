@@ -18,11 +18,11 @@ import {
   StyledClearButton,
   ErrorStateContainer,
 } from './styles';
-import {__DEV__} from 'utils/assertion';
-import {Props, FormElement, defaultProps} from './input-props';
-import {ErrorCircleIcon} from 'icons/error-circle-icon';
-import {SuccessCircleIcon} from 'icons/success-circle-icon';
-import {CloseCircleIcon} from 'icons/close-circle.icon';
+import { __DEV__ } from 'utils/assertion';
+import { Props, FormElement } from './input-props';
+import { ErrorCircleIcon } from 'icons/error-circle-icon';
+import { SuccessCircleIcon } from 'icons/success-circle-icon';
+import { CloseCircleIcon } from 'icons/close-circle.icon';
 import InputPassword from './input-password';
 
 type InputProps = Props & InputVariants;
@@ -82,8 +82,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
 
     const controlledValue = isControlledComponent
-      ? {value: selfValue}
-      : {defaultValue: initialValue};
+      ? { value: selfValue }
+      : { defaultValue: initialValue };
 
     const changeHandler = (event: React.ChangeEvent<FormElement>) => {
       if (disabled || readOnly) return;
@@ -135,7 +135,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           readOnly={readOnly}
           size={size}
           fullWidth={fullWidth}
-          css={{...(css as any)}}
+          css={{ ...(css as any) }}
           {...inputProps}
         />
         {clearable && (
@@ -161,8 +161,8 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {' '}
           {helperText && (
             <StyledHelperText error={error}>
-              {error && <ErrorCircleIcon style={{marginRight: '0.25rem'}} />}
-              {success && <SuccessCircleIcon style={{marginRight: '0.25rem'}} />}
+              {error && <ErrorCircleIcon style={{ marginRight: '0.25rem' }} />}
+              {success && <SuccessCircleIcon style={{ marginRight: '0.25rem' }} />}
               {helperText}
             </StyledHelperText>
           )}
@@ -180,7 +180,7 @@ type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
 
 type ComponentProps = Partial<typeof Input.defaultProps> &
   Omit<Props, keyof typeof Input.defaultProps> &
-  InputVariants & {as?: React.ElementType};
+  InputVariants & { as?: React.ElementType };
 
 if (__DEV__) {
   Input.displayName = 'UberUI.Input';

@@ -1,4 +1,10 @@
-import React, {useEffect, useImperativeHandle, useMemo, useRef, useState} from 'react';
+import React, {
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import {Props, FormElement} from './input-props';
 import {PasswordEyeClosedIcon} from 'icons/password-eye-close';
 import {PasswordEyeOpendIcon} from 'icons/password-eye-open';
@@ -62,9 +68,6 @@ const InputPassword = React.forwardRef<HTMLInputElement, Props>(
       }
     };
 
-    console.log('error', isError);
-    console.log('value', value);
-
     useEffect(() => {
       if (value !== undefined && isError) {
         setErorrState(true);
@@ -121,7 +124,9 @@ const InputPassword = React.forwardRef<HTMLInputElement, Props>(
           {helperText && (
             <StyledHelperText error={error}>
               {error && <ErrorCircleIcon style={{marginRight: '0.25rem'}} />}
-              {success && <SuccessCircleIcon style={{marginRight: '0.25rem'}} />}
+              {success && (
+                <SuccessCircleIcon style={{marginRight: '0.25rem'}} />
+              )}
               {helperText}
             </StyledHelperText>
           )}
