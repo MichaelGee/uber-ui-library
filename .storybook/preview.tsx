@@ -1,7 +1,7 @@
 import React from 'react';
 import {styled} from '../src/stitches';
 import '../src/styles/globals.css';
-// import {ToastProvider} from '../src/hooks/useToast';
+import {ToastProvider} from '../src/components/toast/useToast';
 
 const Box = styled('div', {
   display: 'flex',
@@ -16,7 +16,9 @@ const Box = styled('div', {
 export const decorators = [
   Story => (
     <Box>
-      <Story />
+      <ToastProvider>
+        <Story />
+      </ToastProvider>
     </Box>
   ),
 ];
