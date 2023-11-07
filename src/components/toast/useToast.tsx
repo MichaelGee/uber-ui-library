@@ -5,7 +5,6 @@ import Toast from './toast';
 type ToastType = {
   id?: string;
   message?: string;
-
   type?: 'error' | 'warning' | 'success' | 'info';
   position?: 'top' | 'bottom' | 'topRight' | 'topLeft';
   duration?: number;
@@ -16,12 +15,13 @@ type ToastOptions = {
   position?: 'top' | 'bottom' | 'topRight' | 'topLeft';
   duration?: number;
   headline?: string;
+  closeIcon?: boolean;
   onClick?: () => void;
 };
 
 type ToastContextType = {
   toasts?: ToastType[];
-  addToast?: (headline?: string, options?: ToastOptions) => void;
+  addToast?: (message: string, options?: ToastOptions) => void;
   removeToast?: (id: string) => void;
   children?: React.ReactNode;
 };
@@ -60,6 +60,8 @@ export const ToastProvider: React.FC<ToastContextType> = ({children}) => {
           type={toast?.options?.type}
           //@ts-ignore
           headline={toast?.options?.headline}
+          //@ts-ignore
+          closeIcon={toast?.options?.closeIcon}
           //@ts-ignore
           duration={toast?.options?.duration}
           //@ts-ignore

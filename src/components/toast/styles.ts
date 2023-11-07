@@ -173,3 +173,9 @@ export const ToastViewport = styled(ToastPrimitive.Viewport, {
     },
   },
 });
+
+export const CloseButton = styled(ToastPrimitive.Close, {
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+});

@@ -40,7 +40,12 @@ export const Success = () => {
   const {addToast} = useToast();
 
   const handler = () => {
-    addToast?.('Paragraph text', {type: 'success', headline: 'Headline text'});
+    addToast?.('Paragraph text', {
+      type: 'success',
+      headline: 'Headline text',
+      duration: 300000,
+      closeIcon: true,
+    });
   };
 
   return (

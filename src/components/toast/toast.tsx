@@ -1,14 +1,14 @@
 import React, {forwardRef, memo} from 'react';
 import * as ToastPrimitive from '@radix-ui/react-toast';
-import {StyledToast, ToastViewport} from './styles';
+import {StyledToast, ToastViewport, CloseButton} from './styles';
 import withDefaults from 'utils/with-defaults';
 import Box from 'ui-box';
-import {ErrorCircleIcon} from 'icons/error-circle-icon';
 import {SuccessCircleIcon} from 'icons/success-circle-icon';
 import {InfoIcon} from 'icons/info';
 import {WarningIcon} from 'icons/warning';
 import {Text} from 'components/text';
 import {CloseCircleIcon} from 'icons/close-circle.icon';
+import {CloseIcon} from 'icons/close';
 
 interface ToastProps {
   id?: string;
@@ -22,95 +22,98 @@ interface ToastProps {
   type?: 'error' | 'warning' | 'success' | 'info';
   duration?: number;
   headline?: string;
+  showIcon?: boolean;
   onClick?: () => void;
+  closeIcon?: boolean;
 }
 
 const defaultProps = {
   position: 'topRight',
   type: 'info',
   duration: '2000',
+  showIcon: false,
 };
 
 const renderType = (
   type: string,
   message: string,
   headline,
+  showIcon,
   children: React.ReactNode
 ) => {
   switch (type) {
     case 'error':
       return (
         <Box display="flex" justifyContent="flex-start" alignItems="center">
-          <CloseCircleIcon fill="white" width="24" height="24" />
-          <Box
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="white" size="1rem" weight="medium">
-              {headline}
-            </Text>
-            <Text color="white" size="1rem" weight="normal">
-              {message}
-            </Text>
+          {showIcon && <CloseCircleIcon fill="white" width="24" height="24" />}
+          <Box>
+            <ToastPrimitive.Title>
+              <Text color="white" size="1rem" weight="medium">
+                {headline}
+              </Text>
+            </ToastPrimitive.Title>
+            <ToastPrimitive.Description>
+              <Text color="white" size="1rem" weight="normal">
+                {message}
+              </Text>
+            </ToastPrimitive.Description>
           </Box>
         </Box>
       );
     case 'success':
       return (
         <Box display="flex" justifyContent="flex-start" alignItems="center">
-          <SuccessCircleIcon fill="white" width="24" height="24" />
-          <Box
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="white" size="1rem" weight="medium">
-              {headline}
-            </Text>
-            <Text color="white" size="1rem" weight="normal">
-              {message}
-            </Text>
+          {showIcon && (
+            <SuccessCircleIcon fill="white" width="24" height="24" />
+          )}
+
+          <Box>
+            <ToastPrimitive.Title>
+              <Text color="white" size="1rem" weight="medium">
+                {headline}
+              </Text>
+            </ToastPrimitive.Title>
+            <ToastPrimitive.Description>
+              <Text color="white" size="1rem" weight="normal">
+                {message}
+              </Text>
+            </ToastPrimitive.Description>
           </Box>
         </Box>
       );
     case 'info':
       return (
         <Box display="flex" justifyContent="flex-start" alignItems="center">
-          <InfoIcon fill="white" />
-          <Box
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="white" size="1rem" weight="medium">
-              {headline}
-            </Text>
-            <Text color="white" size="1rem" weight="light">
-              {message}
-            </Text>
+          {showIcon && <InfoIcon fill="white" />}
+          <Box>
+            <ToastPrimitive.Title>
+              <Text color="white" size="1rem" weight="medium">
+                {headline}
+              </Text>
+            </ToastPrimitive.Title>
+            <ToastPrimitive.Description>
+              <Text color="white" size="1rem" weight="normal">
+                {message}
+              </Text>
+            </ToastPrimitive.Description>
           </Box>
         </Box>
       );
     case 'warning':
       return (
         <Box display="flex" justifyContent="flex-start" alignItems="center">
-          <WarningIcon />
-          <Box
-            marginLeft="1rem"
-            display="flex"
-            flexDirection="column"
-            alignItems="flex-start"
-          >
-            <Text color="black" size="1rem" weight="medium">
-              {headline}
-            </Text>
-            <Text color="black" size="1rem" weight="normal">
-              {message}
-            </Text>
+          {showIcon && <WarningIcon />}
+          <Box>
+            <ToastPrimitive.Title>
+              <Text color="white" size="1rem" weight="medium">
+                {headline}
+              </Text>
+            </ToastPrimitive.Title>
+            <ToastPrimitive.Description>
+              <Text color="white" size="1rem" weight="normal">
+                {message}
+              </Text>
+            </ToastPrimitive.Description>
           </Box>
         </Box>
       );
@@ -134,6 +137,8 @@ const Toast = forwardRef(
       type,
       duration,
       onClick,
+      showIcon,
+      closeIcon,
     }: ToastProps,
     ref
   ) => {
@@ -149,7 +154,15 @@ const Toast = forwardRef(
           duration={duration}
           onClick={onClick}
         >
-          {renderType(type, message, headline, children)}
+          {renderType(type, message, headline, showIcon, children)}
+
+          {closeIcon && (
+            <CloseButton aria-label="Close">
+              <span aria-hidden>
+                <CloseIcon />
+              </span>
+            </CloseButton>
+          )}
         </StyledToast>
         <ToastViewport position={position} />
       </ToastPrimitive.Provider>
